@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700&display=swap'); 
+
+/*Asignamos color y font-family al body en general*/
+body {
+    background-color: rgb(186, 218, 228);
+    font-family: 'Ralewey', sans-serif;
+}
+
+/*Alineamos el título al centro*/
+
+h1 {
+    text-align: center;
+}
+
+/*Establecer el ancho del acordeón y el margen superior e inferior*/
+
+
+.accordion{
+    width: 800px;
+    margin: 90px auto;
+    color:#000;
+    background-color: #fff;
+    padding: 45px 45px;
+}
+
+/*Establecemos propiedades de posicionamiento para cada contenedor*/
+
+.accordion .container {
+    position: relative;
+    margin: 10px 10px;
+}
+
+/*Coloca las etiquetas relación con el .container. Agrega relleno en la parte superior e inferior y aumenta el tamaño de la fuente. También hace que su cursor sea un puntero.*/
+
+.accordion .label {
+    position: relative;
+    padding: 10px 0;
+    font-size: 30px;
+    color:#000;
+    cursor:pointer;
+}
+
+/*Coloca el signo más a 5px de la derecha. Lo centra usando la propiedad transform.*/
+
+.accordion .label::before {
+    content: '+';
+    color: #000;
+    position: absolute;
+    top: 50%;
+    right: -5px;
+    font-size: 30px;
+    transform: translateY(-50%);
+}
+
+/*Oculta el contenido (height: 0), disminuye el tamaño de la fuente, justifica el texto y agrega transición*/
+
+.accordion .content {
+    position: relative;
+    background: #fff;
+    height: 0;
+    font-size: 20px;
+    text-align: justify;
+    width: 780px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+/*Agrega una línea horizontal entre los contenidos*/
+
+.accordion hr {
+    width: 100;
+    margin-left: 0;
+    border: 1px solid grey;
+}
+
+/*Muestra el contenido de content cuando se activa, y establece la altura*/
+
+.accordion .container.active .content {
+    height: 150px;
+}
+
+/*Cambia el signo + por - cuando está activa*/
+
+.accordion .container.active .label::before {
+    content: '-';
+    font-size: 30px;
+}
